@@ -1,0 +1,96 @@
+/* HERO */
+.contact-hero {
+  height: 50vh;
+  background-image: url("D:\CREATION POINT\frontend\public\images\imgi_1_pngtree-high-resolution-tiles-of-white-grey-marble-texture-a-luxurious-stone-image_13711364.png");
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-hero h1 {
+  font-size: 42px;
+}
+
+.contact-hero span {
+  color:orange;
+}
+
+.contact-hero p {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* INFO SECTION */
+.contact-info-section {
+  padding: 80px;
+  background: #fff;
+  text-align: center;
+}
+
+.contact-info-box {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.info-desc {
+  margin: 20px 0 40px;
+  color: #555;
+}
+
+/* GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.info-card {
+  padding: 30px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.info-card h4 {
+  margin-bottom: 10px;
+}
+
+/* MAP */
+.map-modern iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-info-section {
+    padding: 40px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.map-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 1;
+}

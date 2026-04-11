@@ -1,0 +1,101 @@
+/* ===== PAGE ===== */
+.profile-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CARD ===== */
+.profile-card {
+  width: 100%;
+  max-width: 420px;
+  background: #0e0e0e;
+  border-radius: 14px;
+  padding: 35px;
+  color: #fff;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+/* ===== HEADER ===== */
+.profile-header {
+  margin-bottom: 25px;
+}
+
+/* ===== AVATAR ===== */
+.avatar {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(90deg, orange, #ff5e00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 10px;
+}
+
+/* ===== NAME ===== */
+.profile-header h2 {
+  margin: 5px 0;
+}
+
+/* ===== ROLE ===== */
+.role {
+  font-size: 13px;
+  color: orange;
+  text-transform: uppercase;
+}
+
+/* ===== INFO ===== */
+.profile-info {
+  margin-top: 20px;
+}
+
+.info-box {
+  background: #111;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #222;
+  text-align: left;
+}
+
+.info-box span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.info-box p {
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff3c3c, #ff0000);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255,0,0,0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 25px 20px;
+  }
+}

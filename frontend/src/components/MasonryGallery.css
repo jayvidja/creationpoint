@@ -1,0 +1,118 @@
+/* SECTION */
+.masonry-section {
+  padding: 60px 8vw;
+  background: #f9f9f9;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* 🔥 REAL MASONRY USING COLUMNS */
+.masonry-columns {
+  column-count: 4;
+  column-gap: 15px;
+}
+
+/* CARD */
+.masonry-card {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.masonry-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.masonry-card:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.masonry-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .masonry-columns {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-columns {
+    column-count: 1;
+  }
+}
+
+/* CARD */
+.masonry-card {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.masonry-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ✅ NAME ALWAYS VISIBLE */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.6); /* clean dark strip */
+  color: #fff;
+  text-align: center;
+}
+
+
+
+.overlay h3 {
+  font-size: 15px;
+  margin: 0;
+}
