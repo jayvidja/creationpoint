@@ -1,7 +1,7 @@
 /* HERO */
 .contact-hero {
   height: 50vh;
-  background-image: url("D:\CREATION POINT\frontend\public\images\imgi_1_pngtree-high-resolution-tiles-of-white-grey-marble-texture-a-luxurious-stone-image_13711364.png");
+  background-image: url("/images/imgi_1_pngtree-high-resolution-tiles-of-white-grey-marble-texture-a-luxurious-stone-image_13711364.png");
   color: #000000;
   display: flex;
   align-items: center;

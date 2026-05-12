@@ -13,7 +13,7 @@
 
 .about-hero {
   background: linear-gradient(to right, #f8f9fb, #ececec);
-  background-image: url("D:\CREATION POINT\frontend\public\images\imgi_1_pngtree-high-resolution-tiles-of-white-grey-marble-texture-a-luxurious-stone-image_13711364.png");
+  background-image: url("/images/imgi_1_pngtree-high-resolution-tiles-of-white-grey-marble-texture-a-luxurious-stone-image_13711364.png");
   padding: 120px 20px 90px;
   text-align: center;
 }
@@ -103,7 +103,7 @@
 
 .about-mission {
   background: #f9f9f9;
- background-image: url("D:\CREATION POINT\frontend\public\images\imgi_117_stone-texture_1194-5387.jpg");
+  background-image: url("/images/imgi_117_stone-texture_1194-5387.jpg");
 
   text-align: center;
   padding: clamp(60px, 8vw, 90px) 20px;
