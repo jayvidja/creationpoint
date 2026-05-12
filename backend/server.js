@@ -3,15 +3,23 @@ import mongoose from "mongoose";
 import cors from "cors";
 import session from "express-session";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
 
 import userRoutes from "./routes/userRoutes.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
 
+dotenv.config();
 const app = express();
 
 /* ✅ CORS */
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: allowedOrigins,
   credentials: true
 }));
 
@@ -21,13 +29,14 @@ app.use(cookieParser());
 
 /* ✅ SESSION */
 app.use(session({
-  secret: "secretKey",
+  secret: process.env.SESSION_SECRET || "secretKey",
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false,
+    secure: process.env.NODE_ENV === "production",
     httpOnly: true,
-    sameSite: "lax"
+    sameSite: "lax",
+    domain: process.env.NODE_ENV === "production" ? undefined : "localhost"
   }
 }));
 
@@ -39,11 +48,15 @@ app.use("/api/users", userRoutes);
 app.use("/api/gallery", galleryRoutes);
 
 /* ✅ DB */
-mongoose.connect("mongodb://127.0.0.1:27017/cpDB")
+const mongoUri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/cpDB";
+
+mongoose.connect(mongoUri)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
 /* ✅ SERVER */
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
 });

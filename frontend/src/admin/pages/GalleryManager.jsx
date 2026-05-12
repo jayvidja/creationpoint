@@ -17,6 +17,18 @@ function GalleryManager() {
     setImages(res.data);
   };
 
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this gallery item?")) return;
+
+    try {
+      await axios.delete(`http://localhost:3000/api/gallery/${id}`);
+      setImages((prev) => prev.filter((item) => item._id !== id));
+    } catch (error) {
+      console.error(error);
+      alert("Failed to delete the gallery item. Please try again.");
+    }
+  };
+
   return (
     <div className="admin-layout">
 
@@ -35,10 +47,16 @@ function GalleryManager() {
             {images.map((item) => (
               <div key={item._id} className="gallery-card">
 
-                <img src={item.image} />
+                <img src={item.image} alt={item.name} />
 
                 <h4>{item.name}</h4>
                 <p>{item.description}</p>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDelete(item._id)}
+                >
+                  Delete
+                </button>
 
               </div>
             ))}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./masonryGallery.css";
+import "./MasonryGallery.css";
 
 export default function MasonryGallery() {
   const [tiles, setTiles] = useState([]);

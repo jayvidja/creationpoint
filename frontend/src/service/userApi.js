@@ -1,5 +1,5 @@
 // BASE URL
-const BASE_URL = "http://localhost:3000/api/users";
+const BASE_URL = `${import.meta.env.VITE_API_URL || "http://localhost:3000"}/api/users`;
 
 /* ================= REGISTER ================= */
 export const registerUser = async (name, email, password) => {
