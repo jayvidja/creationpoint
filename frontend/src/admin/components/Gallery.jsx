@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API_ENDPOINTS from "../../config/api";
+import API_ENDPOINTS, { normalizeImageUrl } from "../../config/api";
 
 function Gallery() {
 
@@ -21,7 +21,7 @@ function Gallery() {
       {images.map((item) => (
         <div key={item._id} className="card">
 
-          <img src={item.image} alt="" />
+          <img src={normalizeImageUrl(item.image)} alt="" />
 
           <h3>{item.name}</h3>
           <p>{item.description}</p>

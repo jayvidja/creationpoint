@@ -1,6 +1,11 @@
 // API Configuration
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
+export const normalizeImageUrl = (url) => {
+  if (!url) return url;
+  return url.replace(/^(https?:)?\/\/localhost:3000/i, API_URL);
+};
+
 export const API_ENDPOINTS = {
   // Users
   users: `${API_URL}/api/users`,

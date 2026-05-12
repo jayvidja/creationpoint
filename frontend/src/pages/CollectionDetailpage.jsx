@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import API_ENDPOINTS from "../config/api";
+import API_ENDPOINTS, { normalizeImageUrl } from "../config/api";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./CollectionDetailpage.css";
@@ -78,7 +78,7 @@ export default function CollectionDetailpage() {
             {/* IMAGE */}
             <div className="detail-image-container">
               <img
-                src={currentImage.image}
+                src={normalizeImageUrl(currentImage.image)}
                 alt={currentImage.name}
                 className="detail-image"
                 onClick={() => setFullscreenImage(currentImage)}
@@ -111,7 +111,7 @@ export default function CollectionDetailpage() {
                 className="related-item"
                 onClick={() => handleRelatedClick(img._id)}
               >
-                <img src={img.image} alt={img.name} />
+                <img src={normalizeImageUrl(img.image)} alt={img.name} />
 
                 <div className="image-info">
                   <h4>{img.name}</h4>
@@ -139,7 +139,7 @@ export default function CollectionDetailpage() {
           </span>
 
           <img
-            src={fullscreenImage.image}
+            src={normalizeImageUrl(fullscreenImage.image)}
             alt={fullscreenImage.name}
           />
         </div>

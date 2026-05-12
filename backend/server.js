@@ -10,6 +10,7 @@ import galleryRoutes from "./routes/galleryRoutes.js";
 
 dotenv.config();
 const app = express();
+app.set("trust proxy", 1);
 
 /* ✅ CORS */
 const allowedOrigins = [

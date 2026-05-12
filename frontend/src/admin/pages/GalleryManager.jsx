@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API_ENDPOINTS from "../../config/api";
+import API_ENDPOINTS, { normalizeImageUrl } from "../../config/api";
 import AdminSidebar from "../components/AdminSidebar";
 import AdminHeader from "../components/AdminHeader";
 import "../styles/admin.css";
@@ -48,7 +48,7 @@ function GalleryManager() {
             {images.map((item) => (
               <div key={item._id} className="gallery-card">
 
-                <img src={item.image} alt={item.name} />
+                <img src={normalizeImageUrl(item.image)} alt={item.name} />
 
                 <h4>{item.name}</h4>
                 <p>{item.description}</p>

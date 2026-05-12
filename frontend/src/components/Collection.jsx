@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API_ENDPOINTS from "../config/api";
+import API_ENDPOINTS, { normalizeImageUrl } from "../config/api";
 
 export default function Collection() {
 

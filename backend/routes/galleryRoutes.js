@@ -17,7 +17,8 @@ router.post("/upload", upload.single("image"), async (req, res) => {
       return res.status(400).json({ message: "No file uploaded" });
     }
 
-    const imageUrl = `http://localhost:3000/uploads/${req.file.filename}`;
+    const baseUrl = process.env.BACKEND_URL || `${req.protocol}://${req.get("host")}`;
+    const imageUrl = `${baseUrl}/uploads/${req.file.filename}`;
 
     const newImage = await Gallery.create({
       image: imageUrl,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import API_ENDPOINTS from "../config/api";
+import API_ENDPOINTS, { normalizeImageUrl } from "../config/api";
 import "./MasonryGallery.css";
 
 export default function MasonryGallery() {
@@ -32,7 +32,7 @@ export default function MasonryGallery() {
             className="masonry-card"
             onClick={() => navigate(`/collection/${tile._id}`)}
           >
-            <img src={tile.image} alt={tile.name} />
+            <img src={normalizeImageUrl(tile.image)} alt={tile.name} />
 
             <div className="overlay">
               <h3>{tile.name}</h3>
