@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_ENDPOINTS from "../../config/api";
 import AdminSidebar from "../components/AdminSidebar";
 import AdminHeader from "../components/AdminHeader";
 import "../styles/admin.css";
@@ -13,7 +14,7 @@ function GalleryManager() {
   }, []);
 
   const fetchImages = async () => {
-    const res = await axios.get("http://localhost:3000/api/gallery");
+    const res = await axios.get(API_ENDPOINTS.gallery);
     setImages(res.data);
   };
 
@@ -21,7 +22,7 @@ function GalleryManager() {
     if (!window.confirm("Delete this gallery item?")) return;
 
     try {
-      await axios.delete(`http://localhost:3000/api/gallery/${id}`);
+      await axios.delete(`${API_ENDPOINTS.gallery}/${id}`);
       setImages((prev) => prev.filter((item) => item._id !== id));
     } catch (error) {
       console.error(error);

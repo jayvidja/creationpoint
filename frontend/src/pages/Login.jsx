@@ -2,6 +2,7 @@ import "../auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import API_ENDPOINTS from "../config/api";
 
 function Login({ onLoginSuccess }) {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ function Login({ onLoginSuccess }) {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/users/login",
+        API_ENDPOINTS.login,
         { email, password },
         { withCredentials: true }
       );

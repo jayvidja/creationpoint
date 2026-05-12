@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_ENDPOINTS from "../config/api";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./CollectionDetailpage.css";
@@ -24,13 +25,13 @@ export default function CollectionDetailpage() {
 
       // ✅ 1. Get current image
       const currentRes = await axios.get(
-        `http://localhost:3000/api/gallery/${id}`
+        `${API_ENDPOINTS.gallery}/${id}`
       );
       setCurrentImage(currentRes.data);
 
       // ✅ 2. Get all images (for related)
       const allRes = await axios.get(
-        "http://localhost:3000/api/gallery"
+        API_ENDPOINTS.gallery
       );
 
       const filtered = allRes.data.filter(

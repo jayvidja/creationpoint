@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import API_ENDPOINTS from "../../config/api";
 import AdminSidebar from "../components/AdminSidebar";
 import AdminHeader from "../components/AdminHeader";
 import "../styles/admin.css";
@@ -42,7 +43,7 @@ function UploadTiles() {
 
     try {
       await axios.post(
-        "http://localhost:3000/api/gallery/upload",
+        API_ENDPOINTS.galleryUpload,
         formData
       );
 

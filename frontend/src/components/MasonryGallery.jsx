@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_ENDPOINTS from "../config/api";
 import "./MasonryGallery.css";
 
 export default function MasonryGallery() {
@@ -13,7 +14,7 @@ export default function MasonryGallery() {
 
   const fetchTiles = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/gallery");
+      const res = await axios.get(API_ENDPOINTS.gallery);
       setTiles(res.data);
     } catch (error) {
       console.error("Error fetching tiles:", error);

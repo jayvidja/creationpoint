@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_ENDPOINTS from "../config/api";
 
 export default function Collection() {
 
@@ -14,7 +15,7 @@ export default function Collection() {
 
   const fetchTiles = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/gallery");
+      const res = await axios.get(API_ENDPOINTS.gallery);
       setItems(res.data);
     } catch (err) {
       console.log(err);

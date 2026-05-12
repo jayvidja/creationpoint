@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import API_ENDPOINTS from "../../config/api";
 import AdminSidebar from "../components/AdminSidebar";
 import AdminHeader from "../components/AdminHeader";
 import "../styles/admin.css";
@@ -10,7 +11,7 @@ function Users() {
   // 🔥 FETCH USERS FROM BACKEND
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/users");
+      const res = await axios.get(API_ENDPOINTS.users);
       setUsers(res.data);
     } catch (error) {
       console.log("FETCH ERROR:", error);
@@ -25,7 +26,7 @@ function Users() {
   // ❌ DELETE USER (Backend से भी delete करना चाहिए)
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/users/${id}`);
+      await axios.delete(`${API_ENDPOINTS.users}/${id}`);
       fetchUsers(); // refresh list
     } catch (error) {
       console.log("DELETE ERROR:", error);

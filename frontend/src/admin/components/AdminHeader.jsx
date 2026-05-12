@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // 🔥 IMPORTANT (missing था)
+import axios from "axios";
+import API_ENDPOINTS from "../../config/api"; // use env-based backend URL
 
 function AdminHeader() {
 
@@ -10,7 +11,7 @@ function AdminHeader() {
 
     try {
       await axios.post(
-        "http://localhost:3000/api/users/logout",
+        API_ENDPOINTS.logout,
         {},
         { withCredentials: true }
       );

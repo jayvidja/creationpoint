@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_ENDPOINTS from "../config/api";
 import "./profile.css";
 
 function Profile() {
@@ -9,7 +10,7 @@ function Profile() {
     const getUser = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/api/users/me",
+          API_ENDPOINTS.profile,
           { withCredentials: true }
         );
 
@@ -28,7 +29,7 @@ function Profile() {
 
   const handleLogout = async () => {
     await axios.post(
-      "http://localhost:3000/api/users/logout",
+      API_ENDPOINTS.logout,
       {},
       { withCredentials: true }
     );

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_ENDPOINTS from "../../config/api";
 import AdminSidebar from "../components/AdminSidebar";
 import AdminHeader from "../components/AdminHeader";
 import "../styles/admin.css";
@@ -20,7 +21,7 @@ function AdminDashboard() {
 
       // ✅ Users Count
       const usersRes = await axios.get(
-        "http://localhost:3000/api/users/count",
+        API_ENDPOINTS.usersCount,
         { withCredentials: true }
       );
 
@@ -28,7 +29,7 @@ function AdminDashboard() {
 
       // ✅ Images Count (NEW)
       const imagesRes = await axios.get(
-        "http://localhost:3000/api/gallery/count"
+        API_ENDPOINTS.galleryCount
       );
 
       setTotalImages(imagesRes?.data?.totalImages || 0);
